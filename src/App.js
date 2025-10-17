@@ -2,15 +2,12 @@ import { useEffect, useState } from "react";
 import Markdown from "react-markdown";
 import "./App.css";
 import axios from "axios";
- function CaptionGenerator() {
+function CaptionGenerator() {
   const [topic, setTopic] = useState("");
   const [tone, setTone] = useState("funny");
   const [platform, setPlatform] = useState("Instagram");
   const [captions, setCaptions] = useState([]);
   const [loading, setLoading] = useState(false);
-
- 
-  
 
   const generateCaptions = async () => {
     if (!topic || !platform || !tone) alert("Please fill all the fields");
@@ -21,8 +18,6 @@ import axios from "axios";
       tone,
       platform,
     });
-
-  
 
     setCaptions(res.data);
     setLoading(false);
